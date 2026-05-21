@@ -19,24 +19,37 @@ Contexto [████░░░░░░] 38% 380k / 1M | Token 5h [██░░
 
 ## Requisitos
 
+### Windows
 - Windows 10/11
 - [PowerShell 7+](https://aka.ms/powershell) (`pwsh`)
+- [Claude Code](https://claude.ai/code) instalado
+
+### Linux / macOS
+- `bash`, `awk`, `git` (normalmente já instalados)
+- `jq` (recomendado) **ou** `python3` como fallback
 - [Claude Code](https://claude.ai/code) instalado
 
 ---
 
 ## Instalação
 
-Execute no **PowerShell 7** (`pwsh`):
+### Windows — PowerShell 7
 
 ```powershell
 irm https://raw.githubusercontent.com/frshaka/claude-statusline/main/install-statusline.ps1 | iex
 ```
 
+### Linux / macOS — Bash
+
+```bash
+bash <(curl -fsSL https://raw.githubusercontent.com/frshaka/claude-statusline/main/install-linux.sh)
+```
+
 O instalador vai:
-1. Baixar `statusline.ps1` para `~/.claude/`
-2. Configurar automaticamente o `~/.claude/settings.json`
-3. Testar a saída e exibir preview
+1. Verificar/instalar dependências (`jq`)
+2. Baixar o script para `~/.claude/`
+3. Configurar automaticamente o `~/.claude/settings.json`
+4. Testar a saída e exibir preview
 
 Reinicie o Claude Code após a instalação.
 
@@ -51,14 +64,12 @@ Basta rodar o mesmo comando de instalação novamente. O arquivo é sobrescrito 
 ## Desinstalação
 
 1. Remova o bloco `statusLine` do `~/.claude/settings.json`
-2. Delete `~/.claude/statusline.ps1`
-
-Ou edite `settings.json` manualmente e apague:
+2. Delete o script instalado (`~/.claude/statusline.ps1` ou `~/.claude/statusline.sh`)
 
 ```json
 "statusLine": {
   "type": "command",
-  "command": "pwsh -NoProfile -ExecutionPolicy Bypass -File \"C:/Users/SEU_USER/.claude/statusline.ps1\"",
+  "command": "...",
   "padding": 2
 }
 ```
@@ -96,8 +107,10 @@ O Claude Code chama o script a cada atualização do status, passando um JSON vi
 
 ```
 claude-statusline/
-├── statusline.ps1          # Script principal da statusline
-├── install-statusline.ps1  # Instalador automático
+├── statusline.ps1          # Script Windows (PowerShell 7)
+├── install-statusline.ps1  # Instalador Windows
+├── statusline.sh           # Script Linux/macOS (Bash)
+├── install-linux.sh        # Instalador Linux/macOS
 └── README.md
 ```
 

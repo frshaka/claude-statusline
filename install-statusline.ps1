@@ -1,6 +1,6 @@
 #Requires -Version 7
 # install-statusline.ps1 — instala statusline customizada do Claude Code
-# Uso: irm https://raw.githubusercontent.com/SEU_USER/SEU_REPO/main/install-statusline.ps1 | iex
+# Uso: irm https://raw.githubusercontent.com/frshaka/claude-statusline/main/install-statusline.ps1 | iex
 
 [CmdletBinding()]
 param()
@@ -8,7 +8,7 @@ param()
 $ErrorActionPreference = 'Stop'
 
 # ── CONFIG ────────────────────────────────────────────────────────────────────
-$REPO_RAW = 'https://raw.githubusercontent.com/SEU_USER/SEU_REPO/main'
+$REPO_RAW = 'https://raw.githubusercontent.com/frshaka/claude-statusline/main'
 $STATUSLINE_URL = "$REPO_RAW/statusline.ps1"
 # ─────────────────────────────────────────────────────────────────────────────
 

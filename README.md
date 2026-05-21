@@ -8,7 +8,7 @@ Statusline para o [Claude Code](https://claude.ai/code) que exibe em tempo real:
 - **Limite de tokens 5h** — barra + percentual
 - **Limite de tokens 7 dias** — barra + percentual
 
-![preview](https://i.imgur.com/placeholder.png)
+![preview]([https://i.imgur.com/placeholder.png](https://imgur.com/a/hPEbVPt))
 
 ```
 Opus 4.7 (1M context) | meu-projeto | git: main ok
